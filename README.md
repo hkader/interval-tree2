@@ -8,7 +8,7 @@ improves previous [interval-tree](https://github.com/shinout/interval-tree)
 
 more maintenanceability with [CoffeeScript](http://coffeescript.org/) OOP.
 
-more robustness with [mocha](http://mochajs.org), [CircleCI](https://circleci.com/gh/shinout/interval-tree2)
+more robustness with [mocha](http://mochajs.org), [CircleCI](https://circleci.com/gh/tarikpolik/interval-tree2)
 
 
 ## API Documentation
