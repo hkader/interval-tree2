@@ -7,7 +7,7 @@ describe 'Node', ->
 
     beforeEach ->
 
-        @node = new Node(500)
+        @node = new Node(200)
 
     describe 'insert', ->
 
@@ -86,6 +86,8 @@ describe 'Node', ->
             expect(@node.endPointSearch(599)).to.have.length 3
             expect(@node.endPointSearch(598)).to.have.length 3
             expect(@node.endPointSearch(597)).to.have.length 4
+            
+            expect(@node.endPointSearch(350)).to.have.length 4
 
             results = @node.endPointSearch(599)
 
