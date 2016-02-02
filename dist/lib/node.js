@@ -104,6 +104,9 @@ Node = (function() {
     index = this.ends.firstPositionOf({
       end: val
     });
+    if (index === -1) {
+      index = 0;
+    }
     return this.ends.slice(index);
   };
 
