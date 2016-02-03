@@ -73,21 +73,19 @@ describe 'Node', ->
             @node.insert new Interval(303, 599, 4)
 
 
-        it 'returns empty array when all interval starts are less than the given value', ->
+        it 'returns empty array when all interval ends are less than the given value', ->
 
             val = 601
 
             expect(@node.endPointSearch(val)).to.eql []
 
 
-        it 'returns array of intervals when some interval starts are less than or equal to the given value', ->
+        it 'returns array of intervals when some interval ends are more than or equal to the given value', ->
 
             expect(@node.endPointSearch(600)).to.have.length 1
             expect(@node.endPointSearch(599)).to.have.length 3
             expect(@node.endPointSearch(598)).to.have.length 3
             expect(@node.endPointSearch(597)).to.have.length 4
-            
-            expect(@node.endPointSearch(350)).to.have.length 4
 
             results = @node.endPointSearch(599)
 
@@ -95,8 +93,9 @@ describe 'Node', ->
                 expect(result).to.be.instanceof Interval
                 expect(result.end).not.to.be.below 599
 
+        it 'returns array of intervals when all interval ends are more than the given value', ->
 
-
+            expect(@node.endPointSearch(350)).to.have.length @node.count()
 
     describe 'getAllIntervals', ->
     describe 'remove', ->

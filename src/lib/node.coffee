@@ -94,7 +94,7 @@ class Node
     endPointSearch: (val) ->
 
         index = @ends.firstPositionOf(end: val)
-        index = if index == -1 then 0
+        if index == -1 then index = 0
         return @ends.slice(index)
 
 
